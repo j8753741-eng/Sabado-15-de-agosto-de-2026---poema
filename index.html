@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>✦ Donde Tu Ausencia Hizo Arder La Noche Hasta Pronunciar Tu Nombre ✦</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --noche:#080611;
+    --noche2:#110b1d;
+    --vino:#321226;
+    --rosa:#f0b8d0;
+    --rosa2:#ffd9e8;
+    --oro:#e8c58d;
+    --texto:#f5eaf0;
+    --suave:#cdb9c7;
+}
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    min-height:100vh;
+    background:
+        radial-gradient(circle at 50% 15%, rgba(128,53,91,.22), transparent 30%),
+        radial-gradient(circle at 15% 70%, rgba(73,32,77,.18), transparent 28%),
+        linear-gradient(145deg,var(--noche),var(--noche2) 55%,#06050b);
+    color:var(--texto);
+    font-family:"Cormorant Garamond",serif;
+    overflow-x:hidden;
+}
+
+/* ───────────── CIELO ───────────── */
+
+.cielo{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:0;
+}
+
+.estrella{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:#fff;
+    border-radius:50%;
+    opacity:.65;
+    animation:parpadear 4s infinite ease-in-out;
+}
+
+.estrella:nth-child(1){top:9%;left:13%;animation-delay:.4s}
+.estrella:nth-child(2){top:17%;left:81%;animation-delay:1.3s}
+.estrella:nth-child(3){top:28%;left:24%;animation-delay:2s}
+.estrella:nth-child(4){top:35%;left:91%;animation-delay:.8s}
+.estrella:nth-child(5){top:51%;left:7%;animation-delay:2.7s}
+.estrella:nth-child(6){top:62%;left:87%;animation-delay:1.8s}
+.estrella:nth-child(7){top:76%;left:17%;animation-delay:3s}
+.estrella:nth-child(8){top:83%;left:78%;animation-delay:1s}
+.estrella:nth-child(9){top:43%;left:54%;animation-delay:2.4s}
+.estrella:nth-child(10){top:12%;left:48%;animation-delay:3.4s}
+.estrella:nth-child(11){top:68%;left:46%;animation-delay:.6s}
+.estrella:nth-child(12){top:91%;left:58%;animation-delay:2.2s}
+
+@keyframes parpadear{
+    0%,100%{opacity:.25;transform:scale(.8)}
+    50%{opacity:1;transform:scale(1.7)}
+}
+
+/* ───────────── CONTENEDOR ───────────── */
+
+.poema{
+    position:relative;
+    z-index:1;
+    width:min(900px,92%);
+    margin:0 auto;
+    padding:70px 0 90px;
+}
+
+/* ───────────── ENCABEZADO ───────────── */
+
+.encabezado{
+    text-align:center;
+    margin-bottom:65px;
+    animation:aparecer 1.8s ease both;
+}
+
+.simbolo{
+    color:var(--oro);
+    font-size:18px;
+    letter-spacing:9px;
+    margin-bottom:25px;
+}
+
+h1{
+    font-family:"Cinzel",serif;
+    font-size:clamp(25px,5vw,48px);
+    line-height:1.35;
+    font-weight:600;
+    letter-spacing:2px;
+    color:var(--rosa2);
+    text-shadow:
+        0 0 12px rgba(240,184,208,.18),
+        0 0 35px rgba(240,184,208,.08);
+}
+
+.fecha{
+    margin-top:25px;
+    font-size:18px;
+    letter-spacing:4px;
+    color:var(--oro);
+}
+
+.apodo{
+    margin-top:18px;
+    font-size:22px;
+    color:var(--suave);
+    font-style:italic;
+}
+
+/* ───────────── ESTRUCTURA POÉTICA ───────────── */
+
+.verso{
+    position:relative;
+    margin:0 auto 48px;
+    padding:30px 35px;
+    max-width:720px;
+    border-left:1px solid rgba(232,197,141,.32);
+    animation:subir 1.4s ease both;
+}
+
+.verso::before{
+    content:"";
+    position:absolute;
+    left:-4px;
+    top:29px;
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:var(--oro);
+    box-shadow:0 0 15px rgba(232,197,141,.65);
+}
+
+.verso p{
+    font-size:22px;
+    line-height:1.62;
+    letter-spacing:.2px;
+}
+
+.verso p span{
+    display:block;
+}
+
+/* ───────────── VERSO CENTRAL ───────────── */
+
+.latido{
+    margin:70px auto;
+    text-align:center;
+    position:relative;
+    padding:45px 20px;
+}
+
+.latido::before,
+.latido::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    width:100px;
+    height:1px;
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(232,197,141,.65),
+        transparent
+    );
+    transform:translateX(-50%);
+}
+
+.latido::before{top:0}
+.latido::after{bottom:0}
+
+.latido .palabra{
+    font-family:"Cinzel",serif;
+    font-size:clamp(34px,7vw,68px);
+    letter-spacing:8px;
+    color:var(--rosa2);
+    text-shadow:0 0 30px rgba(240,184,208,.25);
+    animation:latido 3s infinite ease-in-out;
+}
+
+.latido .detalle{
+    margin-top:14px;
+    font-size:17px;
+    letter-spacing:5px;
+    color:var(--oro);
+    text-transform:uppercase;
+}
+
+@keyframes latido{
+    0%,100%{transform:scale(1)}
+    50%{transform:scale(1.035)}
+}
+
+/* ───────────── FRASE DESTACADA ───────────── */
+
+.destacado{
+    margin:75px auto;
+    max-width:760px;
+    text-align:center;
+    padding:55px 25px;
+    position:relative;
+}
+
+.destacado::before{
+    content:"“";
+    position:absolute;
+    top:-15px;
+    left:50%;
+    transform:translateX(-50%);
+    font-family:Georgia,serif;
+    font-size:100px;
+    color:rgba(232,197,141,.12);
+}
+
+.destacado p{
+    font-size:28px;
+    line-height:1.5;
+    color:var(--rosa2);
+}
+
+/* ───────────── FINAL ───────────── */
+
+.final{
+    margin-top:90px;
+    padding:65px 30px;
+    text-align:center;
+    border-top:1px solid rgba(232,197,141,.18);
+    position:relative;
+}
+
+.final .corazon{
+    font-size:30px;
+    margin-bottom:30px;
+    animation:latido 2.5s infinite;
+}
+
+.final p{
+    font-size:24px;
+    line-height:1.65;
+}
+
+.final .ultima{
+    margin-top:35px;
+    font-family:"Cinzel",serif;
+    font-size:clamp(25px,5vw,42px);
+    color:var(--rosa2);
+    line-height:1.4;
+}
+
+/* ───────────── ANIMACIONES ───────────── */
+
+@keyframes aparecer{
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes subir{
+    from{
+        opacity:0;
+        transform:translateY(35px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ───────────── RESPONSIVE ───────────── */
+
+@media(max-width:600px){
+
+    .poema{
+        width:90%;
+        padding-top:50px;
+    }
+
+    .encabezado{
+        margin-bottom:45px;
+    }
+
+    .simbolo{
+        letter-spacing:5px;
+    }
+
+    .fecha{
+        font-size:15px;
+        letter-spacing:2px;
+    }
+
+    .apodo{
+        font-size:20px;
+    }
+
+    .verso{
+        padding:22px 22px;
+        margin-bottom:35px;
+    }
+
+    .verso p{
+        font-size:20px;
+        line-height:1.55;
+    }
+
+    .latido{
+        margin:55px auto;
+        padding:40px 10px;
+    }
+
+    .latido .palabra{
+        letter-spacing:4px;
+    }
+
+    .latido .detalle{
+        font-size:13px;
+        letter-spacing:3px;
+    }
+
+    .destacado{
+        margin:55px auto;
+        padding:45px 10px;
+    }
+
+    .destacado p{
+        font-size:24px;
+    }
+
+    .final{
+        margin-top:60px;
+        padding:50px 12px;
+    }
+
+    .final p{
+        font-size:21px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="cielo">
+    <span class="estrella"></span>
+    <span class="estrella"></span>
+    <span class="estrella"></span>
+    <span class="estrella"></span>
+    <span class="estrella"></span>
+    <span class="estrella"></span>
+    <span class="estrella"></span>
+    <span class="estrella"></span>
+    <span class="estrella"></span>
+    <span class="estrella"></span>
+    <span class="estrella"></span>
+    <span class="estrella"></span>
+</div>
+
+<main class="poema">
+
+    <header class="encabezado">
+
+        <div class="simbolo">✦　✦　✦</div>
+
+        <h1>
+            DONDE TU AUSENCIA HIZO ARDER<br>
+            LA NOCHE HASTA PRONUNCIAR TU NOMBRE
+        </h1>
+
+        <div class="fecha">
+            SÁBADO · 15 DE AGOSTO · 2026
+        </div>
+
+        <div class="apodo">
+            Para mi Lucero de Medianoche
+        </div>
+
+    </header>
+
+
+    <section class="verso">
+        <p>
+            Esta noche la distancia parece más grande
+            <span>porque me faltan tus ojos,</span>
+            <span>tu sonrisa,</span>
+            <span>tu manera de acercarte a mí</span>
+            <span>y ese pequeño universo que nace</span>
+            <span>cada vez que te tengo entre mis brazos.</span>
+        </p>
+    </section>
+
+
+    <section class="verso">
+        <p>
+            Me has hecho demasiada falta, amor mío.
+            <span>Y aunque intento distraer al corazón,</span>
+            <span>él insiste en buscarte</span>
+            <span>en cada rincón de esta noche.</span>
+        </p>
+    </section>
+
+
+    <section class="verso">
+        <p>
+            Faltan todavía dos días
+            <span>para volver a mirarte,</span>
+            <span>pero mi corazón no sabe contar el tiempo:</span>
+            <span>para él, cada minuto sin ti</span>
+            <span>es una eternidad vestida de silencio.</span>
+        </p>
+    </section>
+
+
+    <section class="destacado">
+        <p>
+            Si pudiera,<br>
+            cruzaría esta noche entera solamente para encontrarte,<br>
+            llegaría hasta donde estuvieras,<br>
+            te abrazaría sin decir una palabra<br>
+            y dejaría que todo lo que siento<br>
+            hablara por mí.
+        </p>
+    </section>
+
+
+    <section class="verso">
+        <p>
+            Porque cuando te extraño
+            <span>no solamente extraño verte;</span>
+            <span>extraño la paz que me das,</span>
+            <span>la forma en que mi mundo cambia</span>
+            <span>cuando apareces,</span>
+            <span>la manera en que un simple instante contigo</span>
+            <span>puede hacer que todo vuelva a tener sentido.</span>
+        </p>
+    </section>
+
+
+    <section class="verso">
+        <p>
+            Tú no eres solamente la mujer que amo.
+            <span>Eres ese lugar invisible</span>
+            <span>al que mi corazón corre</span>
+            <span>cuando necesita sentirse en casa.</span>
+        </p>
+    </section>
+
+
+    <section class="latido">
+
+        <div class="palabra">TE AMO</div>
+
+        <div class="detalle">
+            y esta noche también
+        </div>
+
+    </section>
+
+
+    <section class="verso">
+        <p>
+            Te amo con esa intensidad
+            <span>que no sabe quedarse quieta,</span>
+            <span>con ese deseo inmenso de volver a tenerte cerca,</span>
+            <span>con las ganas de mirarte de frente</span>
+            <span>y decirte cuánto te extrañé</span>
+            <span>sin que me alcance una sola palabra.</span>
+        </p>
+    </section>
+
+
+    <section class="verso">
+        <p>
+            Te amo en la espera.
+            <span>Te amo en la distancia.</span>
+            <span>Te amo en cada pensamiento que lleva tu nombre.</span>
+            <span>Te amo incluso en esos momentos</span>
+            <span>en los que cierro los ojos</span>
+            <span>solo para imaginar que estás aquí.</span>
+        </p>
+    </section>
+
+
+    <section class="destacado">
+        <p>
+            Y cuando finalmente lleguen esos dos días,<br>
+            cuando pueda volver a verte,<br>
+            quiero abrazarte tan fuerte<br>
+            que por un instante desaparezca<br>
+            todo lo que nos separó.
+        </p>
+    </section>
+
+
+    <section class="verso">
+        <p>
+            Quiero quedarme contigo.
+            <span>Quiero mirarte.</span>
+            <span>Quiero sentir tu cercanía.</span>
+            <span>Quiero recuperar cada segundo que hoy me falta.</span>
+        </p>
+    </section>
+
+
+    <section class="verso">
+        <p>
+            Porque si esta noche duele un poquito,
+            <span>es solamente porque amarte</span>
+            <span>se ha convertido en la forma más hermosa</span>
+            <span>que encontró mi corazón</span>
+            <span>de necesitarte.</span>
+        </p>
+    </section>
+
+
+    <section class="destacado">
+        <p>
+            Aunque hoy mis brazos no puedan alcanzarte,<br>
+            <strong>mi amor sí.</strong>
+        </p>
+    </section>
+
+
+    <section class="verso">
+        <p>
+            Y mientras la noche siga avanzando,
+            <span>mientras las estrellas continúen encendidas,</span>
+            <span>habrá una parte de mí</span>
+            <span>que permanecerá despierta,</span>
+            <span>pronunciando tu nombre en silencio</span>
+            <span>y contando las horas</span>
+            <span>hasta volver a encontrarte.</span>
+        </p>
+    </section>
+
+
+    <section class="final">
+
+        <div class="corazon">❤️‍🔥</div>
+
+        <p>
+            Solo faltan dos días, mi amor.
+            <br><br>
+            Dos días para volver a mirarte.
+            <br>
+            Dos días para volver a abrazarte.
+            <br>
+            Dos días para que mi corazón,
+            después de extrañarte tanto,
+            pueda volver a sentirse completo.
+        </p>
+
+        <div class="ultima">
+            Te extrañé con toda mi alma,<br>
+            pero te amé todavía más.
+        </div>
+
+    </section>
+
+</main>
+
+</body>
+  </html>
